@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupsOfNumbers", "GroupsOfNumbers\GroupsOfNumbers.csproj", "{310B1004-79F3-4EA7-B2AB-60135158273B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{310B1004-79F3-4EA7-B2AB-60135158273B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310B1004-79F3-4EA7-B2AB-60135158273B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310B1004-79F3-4EA7-B2AB-60135158273B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310B1004-79F3-4EA7-B2AB-60135158273B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {965587B4-DBF6-4218-844A-619A0D473244}
+	EndGlobalSection
+EndGlobal
