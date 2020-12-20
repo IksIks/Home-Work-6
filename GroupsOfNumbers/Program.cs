@@ -79,7 +79,7 @@ namespace GroupsOfNumbers
 
 		public static void Main()
 		{
-			File.WriteAllText(@"test.txt", "1000");
+			File.WriteAllText(@"test.txt", "100");
 			string nFromFile = File.ReadAllText(@"test.txt");
 			DateTime start = DateTime.Now;
 			int[] massivN = GetMassivN(nFromFile);
@@ -123,7 +123,7 @@ namespace GroupsOfNumbers
 							}
 						}					
 						Console.Write("Программа завершена,откройте файл с данными");
-					Console.WriteLine($"Время {end.TotalMinutes}");
+					Console.WriteLine($"Время {end.TotalSeconds}");
 						break;
 					
 			}
