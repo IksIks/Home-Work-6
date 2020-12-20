@@ -79,7 +79,7 @@ namespace GroupsOfNumbers
 
 		public static void Main()
 		{
-			File.WriteAllText(@"test.txt", "100");
+			File.WriteAllText(@"test.txt", "50");
 			string nFromFile = File.ReadAllText(@"test.txt");
 			DateTime start = DateTime.Now;
 			int[] massivN = GetMassivN(nFromFile);

@@ -8,8 +8,8 @@ namespace GroupsOfNumberVersion2
         static void Main(string[] args)
         {
             File.WriteAllText(@"number.txt", "50");
-            string numberFromFile = File.ReadAllText(@"number.txt");
-
+            int numberFromFile = int.Parse(File.ReadAllText(@"number.txt"));
+            int M = (int)Math.Log(numberFromFile, 2) + 1;
         }
     }
 }
