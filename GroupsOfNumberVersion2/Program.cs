@@ -7,13 +7,17 @@ namespace GroupsOfNumberVersion2
     {
         static int ExpNumber(int N)
         {
-            return (int)Math.Pow(2, N);           
+            return (int)Math.Pow(2, N);
+        }
+        static void Print(string text)
+        {
+            Console.WriteLine(text);
         }
         static void Main(string[] args)
         {
-            File.WriteAllText(@"number.txt", "5000");
+            File.WriteAllText(@"number.txt", "100");
             int numberFromFile = int.Parse(File.ReadAllText(@"number.txt"));
-            //int M = (int)Math.Log(numberFromFile, 2) + 1;
+            byte M = Convert.ToByte(Math.Log(numberFromFile, 2));
             int minExp = 1;
             int maxExp = ExpNumber(1);
             int count = 1;
@@ -22,7 +26,7 @@ namespace GroupsOfNumberVersion2
             {
                 for (int i = 1; i <= numberFromFile; i++)
                 {
-                    if (i >= minExp && i < maxExp)                        
+                    if (i >= minExp && i < maxExp)
                         numbersWriter.Write($"{i}  ", true);
                     else
                     {
@@ -35,7 +39,8 @@ namespace GroupsOfNumberVersion2
                 }
             }
             TimeSpan ts = DateTime.Now.Subtract(start);
-            Console.WriteLine($"Время: {ts.Minutes} минут, {ts.Seconds} секуннд {ts.Milliseconds} миллисекунд");
+            Print("Что сделать с даннными: 'F' - звапис");
+            Print($"Время: {ts.Minutes} минут, {ts.Seconds} секуннд, {ts.Milliseconds} миллисекунд");
             Console.ReadKey();
         }
     }
