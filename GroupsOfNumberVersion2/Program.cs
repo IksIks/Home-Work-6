@@ -18,6 +18,14 @@ namespace GroupsOfNumberVersion2
             File.WriteAllText(@"number.txt", "100");
             int numberFromFile = int.Parse(File.ReadAllText(@"number.txt"));
             byte M = Convert.ToByte(Math.Log(numberFromFile, 2));
+            Print("Что сделать с даннными:\n'S' - запись в файл" +
+                                           "\n'G' - вывод количества групп на экран");
+            char symbol = Char.ToUpper(Console.ReadKey(true).KeyChar);
+            while ((symbol != 'S') && (symbol != 'G'))
+            {
+                Print("Вводите либо 'S', либо 'G'");
+                symbol = Char.ToUpper(Console.ReadKey(true).KeyChar);
+            }
             int minExp = 1;
             int maxExp = ExpNumber(1);
             int count = 1;
@@ -39,7 +47,6 @@ namespace GroupsOfNumberVersion2
                 }
             }
             TimeSpan ts = DateTime.Now.Subtract(start);
-            Print("Что сделать с даннными: 'F' - звапис");
             Print($"Время: {ts.Minutes} минут, {ts.Seconds} секуннд, {ts.Milliseconds} миллисекунд");
             Console.ReadKey();
         }
