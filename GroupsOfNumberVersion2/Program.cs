@@ -35,7 +35,7 @@ namespace GroupsOfNumberVersion2
                 }
             }
             TimeSpan ts = DateTime.Now.Subtract(start);
-            Console.WriteLine($"Время: {ts.Minutes} минут, {ts.Seconds} секуннд {ts.Milliseconds} миллисекунд");
+            Console.WriteLine($"Время: {ts.Minutes} минут, {ts.Seconds} секуннд, {ts.Milliseconds} миллисекунд");
             Console.ReadKey();
         }
     }
