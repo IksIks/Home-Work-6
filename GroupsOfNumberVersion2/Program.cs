@@ -7,17 +7,31 @@ namespace GroupsOfNumberVersion2
 {
    class Program
    {
+		/// <summary>
+		/// Возвращает степень двойки
+		/// </summary>
+		/// <param name="N">степень</param>
+		/// <returns> 2 в степени N </returns>
 	  static int ExpNumber(int N)
 	  {
 		 return (int)Math.Pow(2, N);
 	  }
 
+		/// <summary>
+		/// Вывод на экран чего угодно
+		/// </summary>
+		/// <param name="text"></param>
 	  static void Print(string text)
 	  {
 		 Console.WriteLine(text);
 	  }
 
-	  static void DataCompression(string file, string zipFile)
+		/// <summary>
+		/// Функция создает Zip поток
+		/// </summary>
+		/// <param name="file"> путь к исходному файлу и его имя </param>
+		/// <param name="zipFile"> путь к архивному файлу и его имя </param>
+		static void DataCompression(string file, string zipFile)
 	  {
 		 using (FileStream read = new FileStream(file, FileMode.OpenOrCreate))
 		 {
@@ -30,6 +44,12 @@ namespace GroupsOfNumberVersion2
 			}
 		 }
 	  }
+		/// <summary>
+		/// Функция проверки ввода ответов от пользователя
+		/// </summary>
+		/// <param name="answer1"> первый вариант ответа </param>
+		/// <param name="answer2"> второй вариант ответа </param>
+		/// <returns></returns>
 	  static char CheckingInput(char answer1, char answer2)
 	  {
 		 char symbol = Char.ToUpper(Console.ReadKey(true).KeyChar);
@@ -40,7 +60,11 @@ namespace GroupsOfNumberVersion2
 		 }
 		 return symbol;
 	  }
-	  
+	  /// <summary>
+	  /// Функия определяет размер файла
+	  /// </summary>
+	  /// <param name="file"> путь к файлу и его имя </param>
+	  /// <returns></returns>
 	  static long SizeFile(string file)
 	  {
 	  		FileInfo size = new FileInfo(file);
@@ -50,7 +74,7 @@ namespace GroupsOfNumberVersion2
 	  static void Main(string[] args)
 	  {
 	  	 
-		 File.WriteAllText(@"number.txt", "500");
+		 File.WriteAllText(@"number.txt", "50000");
 		 int numberFromFile = int.Parse(File.ReadAllText(@"number.txt"));
 		 string outputFile = "test.txt";
 		 Print("Что сделать с даннными:\n'S' - запись в файл" +
