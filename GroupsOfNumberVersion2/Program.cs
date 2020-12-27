@@ -35,7 +35,7 @@ namespace GroupsOfNumberVersion2
 		{
 			using (FileStream read = new FileStream(file, FileMode.OpenOrCreate))
 			{
-				using (FileStream write = File.Create(zipFile))
+				using (FileStream write = File.Create(zipFile + ".gz"))
 				{
 					using (GZipStream zip = new GZipStream(write, CompressionMode.Compress))
 					{
@@ -66,7 +66,7 @@ namespace GroupsOfNumberVersion2
 	  /// <param name="file"> путь к файлу и его имя </param>
 	  /// <returns></returns>
 	  static long SizeFile(string file)
-	  {
+	  {	
 			FileInfo size = new FileInfo(file);
 			return size.Length;
 	  }
@@ -74,7 +74,7 @@ namespace GroupsOfNumberVersion2
 	  static void Main(string[] args)
 	  {
 		 
-		 File.WriteAllText(@"number.txt", "50000");
+		 File.WriteAllText(@"number.txt", "5000");
 		 int numberFromFile = int.Parse(File.ReadAllText(@"number.txt"));
 		 string outputFile = "test.txt";
 		 Print("Что сделать с даннными:\n'S' - запись в файл" +
@@ -109,13 +109,13 @@ namespace GroupsOfNumberVersion2
 					long sizeFile = SizeFile(outputFile);
 					Print($"Размер файла {outputFile} {sizeFile} byte" );
 				  
-					string outputZipFile = "testZip.zip";
+					//string outputZipFile = "testZip.txt.gz";
 					Print("Сжать получившиеся данные? Y/N ");
 					symbol = CheckingInput('Y', 'N');
 					if (symbol == 'Y')
 					{
-						DataCompression(outputFile, outputZipFile);
-						sizeFile = SizeFile(outputZipFile);
+						DataCompression(outputFile, outputFile);
+						sizeFile = SizeFile(outputFile + ".gz");
 						Print($"Размер файла {outputFile} после сжатия {sizeFile} byte" );
 					}
 					else
